@@ -16,6 +16,10 @@ app.use((req, res, next) => {
 app.use(userRouter);
 app.use(bookRouter);
 
+app.get('/', (req,res) => {
+  res.send('Welcome to the Book Store')
+})
+
 connectDB()
   .then(() => {
     app.listen(port, () => {
